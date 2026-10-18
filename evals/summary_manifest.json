@@ -1,0 +1,88 @@
+{
+  "version": 1,
+  "goal": "three_section_minutes",
+  "sections": ["会议概要", "会议议题", "待办事项"],
+  "cases": [
+    {
+      "case_id": "project_sync_001",
+      "dataset": "project_sync_001.json",
+      "allowed_meeting_types": ["project_sync", "universal_minutes"],
+      "required_overview": ["进展", "问题", "下一步"],
+      "required_topics": ["项目", "阻塞", "计划"],
+      "required_todos": ["王珊", "赵强"],
+      "min_topic_count": 2,
+      "min_todo_count": 1
+    },
+    {
+      "case_id": "decision_review_001",
+      "dataset": "decision_review_001.json",
+      "allowed_meeting_types": ["decision_review"],
+      "required_overview": ["方案", "决策", "结论"],
+      "required_topics": ["方案 A", "方案 B", "反对"],
+      "required_todos": ["验证", "补充"],
+      "min_topic_count": 2,
+      "min_todo_count": 1
+    },
+    {
+      "case_id": "brainstorming_002",
+      "dataset": "brainstorming_002.json",
+      "allowed_meeting_types": ["brainstorming", "general_meeting"],
+      "required_overview": ["头脑风暴", "未定", "下周"],
+      "required_topics": ["岗位", "任务卡", "挑战"],
+      "required_todos": ["原型", "访谈", "草案"],
+      "min_topic_count": 2,
+      "min_todo_count": 1
+    },
+    {
+      "case_id": "general_no_conclusion_001",
+      "dataset": "general_no_conclusion_001.json",
+      "allowed_meeting_types": ["general_meeting", "universal_minutes"],
+      "required_overview": ["问题", "暂未", "待确认"],
+      "required_topics": ["用户路径", "推荐区", "搜索入口"],
+      "required_todos": [],
+      "min_topic_count": 2,
+      "min_todo_count": 0
+    },
+    {
+      "case_id": "interleaved_topics_003",
+      "dataset": "interleaved_topics_003.json",
+      "allowed_meeting_types": ["universal_minutes", "general_meeting"],
+      "required_overview": ["市场", "项目", "风控"],
+      "required_topics": ["市场", "项目", "人效", "风控"],
+      "required_todos": ["客户台账", "整改计划", "培训方案"],
+      "min_topic_count": 3,
+      "min_todo_count": 2
+    },
+    {
+      "case_id": "speaker_missing_all_001",
+      "dataset": "speaker_missing_all_001.json",
+      "allowed_meeting_types": ["universal_minutes", "project_sync", "general_meeting"],
+      "required_overview": ["检索排序", "FAQ", "移动端"],
+      "required_topics": ["检索排序", "FAQ", "移动端"],
+      "required_todos": ["FAQ 数据全量同步", "移动端结果卡片改版", "评估方案整理"],
+      "require_all_todo_owners_empty": true,
+      "min_topic_count": 2,
+      "min_todo_count": 2
+    },
+    {
+      "case_id": "interview_research_001",
+      "dataset": "interview_research_001.json",
+      "allowed_meeting_types": ["interview_research"],
+      "required_overview": ["用户", "痛点", "需求"],
+      "required_topics": ["检索结果", "版本", "生效时间"],
+      "required_todos": [],
+      "min_topic_count": 2,
+      "min_todo_count": 0
+    },
+    {
+      "case_id": "general_meeting_001",
+      "dataset": "general_meeting_001.json",
+      "allowed_meeting_types": ["general_meeting", "universal_minutes"],
+      "required_overview": ["进展", "问题", "待确认"],
+      "required_topics": ["重点", "现状", "部署"],
+      "required_todos": ["排期建议"],
+      "min_topic_count": 2,
+      "min_todo_count": 1
+    }
+  ]
+}

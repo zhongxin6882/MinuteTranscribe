@@ -1,0 +1,16 @@
+__pycache__/
+*.pyc
+.venv/
+out/
+.env
+.minutes.config.json
+
+# Local runtime data and generated artifacts
+/data/
+/tmp/
+/.pycache/
+/evals/results/
+/deploy.tar.gz
+.env.*
+!.env.example
+.DS_Store

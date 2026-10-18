@@ -1,0 +1,10 @@
+[project]
+name = "meeting-minutes-transcript"
+version = "0.1.0"
+description = "Transcript to structured meeting minutes pipeline."
+requires-python = ">=3.12"
+dependencies = []
+
+[tool.uv]
+package = false
+

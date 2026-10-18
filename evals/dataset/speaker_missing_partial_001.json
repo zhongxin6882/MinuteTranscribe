@@ -1,0 +1,29 @@
+{
+  "meeting_id": "speaker_missing_partial_001",
+  "segments": [
+    {
+      "seg_id": "s001",
+      "speaker": "李哲",
+      "start": "00:00:10",
+      "text": "今天同步搜索结果页优化的交付安排。"
+    },
+    {
+      "seg_id": "s002",
+      "speaker": null,
+      "start": "00:01:02",
+      "text": "本周需要先补版本号和生效时间字段展示。"
+    },
+    {
+      "seg_id": "s003",
+      "speaker": "周宁",
+      "start": "00:02:00",
+      "text": "我负责 7 月 28 日前完成结果卡片视觉稿。"
+    },
+    {
+      "seg_id": "s004",
+      "speaker": null,
+      "start": "00:03:16",
+      "text": "埋点补充和线上灰度需要下周三前完成。"
+    }
+  ]
+}

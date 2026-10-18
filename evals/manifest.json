@@ -1,0 +1,56 @@
+{
+  "cases": [
+    {
+      "case_id": "brainstorming_002",
+      "dataset": "brainstorming_002.json",
+      "allowed_meeting_types": ["brainstorming"],
+      "required_core": {
+        "topics": ["岗位", "统一任务主线", "挑战"],
+        "open_questions": ["下周", "访谈数据", "原型草案"],
+        "conclusions": ["今天先不定方案"]
+      },
+      "required_todos": ["岗位版任务卡草案"],
+      "require_no_conclusion": true,
+      "forbidden_text": ["达成一致", "最终拍板", "最终决策"]
+    },
+    {
+      "case_id": "general_no_conclusion_001",
+      "dataset": "general_no_conclusion_001.json",
+      "allowed_meeting_types": ["general_meeting", "universal_minutes"],
+      "required_core": {
+        "topics": ["用户路径", "推荐区", "搜索入口"],
+        "open_questions": ["埋点", "访谈结果", "改入口还是改推荐区"],
+        "conclusions": ["今天先把问题列清", "不在这次会上拍板"]
+      },
+      "required_todos": [],
+      "require_no_conclusion": true,
+      "forbidden_text": ["达成一致", "最终决策", "明确负责人"]
+    },
+    {
+      "case_id": "interleaved_topics_003",
+      "dataset": "interleaved_topics_003.json",
+      "allowed_meeting_types": ["universal_minutes", "general_meeting"],
+      "required_core": {
+        "topics": ["市场", "项目", "人效", "风控"],
+        "risks": ["合同审批", "归档", "招聘补位"],
+        "conclusions": ["纪要要按重点方向归纳"]
+      },
+      "required_todos": ["重点客户台账", "滞后项目整改计划", "培训方案"],
+      "require_no_conclusion": false,
+      "forbidden_text": []
+    },
+    {
+      "case_id": "speaker_missing_all_001",
+      "dataset": "speaker_missing_all_001.json",
+      "allowed_meeting_types": ["universal_minutes", "project_sync", "general_meeting"],
+      "required_core": {
+        "topics": ["检索排序", "FAQ", "移动端"],
+        "conclusions": ["不要凭空写负责人"]
+      },
+      "required_todos": ["FAQ 数据全量同步", "移动端结果卡片改版", "评估方案整理"],
+      "require_all_todo_owners_empty": true,
+      "require_no_conclusion": false,
+      "forbidden_text": []
+    }
+  ]
+}
