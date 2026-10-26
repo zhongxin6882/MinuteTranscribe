@@ -3698,6 +3698,316 @@
   <script>
     // GitHub Pages is a public, frontend-only UI preview, not real authentication.
     const STATIC_DEMO = location.hostname === "zhongxin6882.github.io" && location.pathname.startsWith("/MinuteTranscribe/");
+    // Demo fixtures are fictional and only exist on the public GitHub Pages preview.
+    const DEMO_DOCUMENTS = [
+      {
+        "id": "demo-project",
+        "title": "项目周会｜官网改版进度同步",
+        "created_at": "2026-10-23T16:30:00+08:00",
+        "updated_at": "2026-10-23T16:30:00+08:00",
+        "status": "纪要已生成",
+        "meeting_type": "project_sync",
+        "input_kind": "text",
+        "source_input": "林晓：官网首页视觉第一轮已经完成，今天主要看适配和交互验收。\n周宁：桌面滚动效果整体可用，但移动端还有两个断点需要复查。\n陈一：这周先把首页适配与交互验收做好，其他新增功能暂时不加。\n林晓：我在10月28日前整理移动端适配清单，周宁10月29日前完成滚动交互回归。",
+        "transcript": {
+          "segments": [
+            {
+              "seg_id": "demo-project-s1",
+              "start": "00:00:08",
+              "speaker": "林晓",
+              "text": "官网首页视觉第一轮已经完成，今天主要看适配和交互验收。",
+              "cleaned_text": "官网首页视觉第一轮已经完成，今天主要看适配和交互验收。"
+            },
+            {
+              "seg_id": "demo-project-s2",
+              "start": "00:01:26",
+              "speaker": "周宁",
+              "text": "桌面滚动效果整体可用，但移动端还有两个断点需要复查。",
+              "cleaned_text": "桌面滚动效果整体可用，但移动端还有两个断点需要复查。"
+            },
+            {
+              "seg_id": "demo-project-s3",
+              "start": "00:03:40",
+              "speaker": "陈一",
+              "text": "这周先把首页适配与交互验收做好，其他新增功能暂时不加。",
+              "cleaned_text": "这周先把首页适配与交互验收做好，其他新增功能暂时不加。"
+            },
+            {
+              "seg_id": "demo-project-s4",
+              "start": "00:05:15",
+              "speaker": "林晓",
+              "text": "我在10月28日前整理移动端适配清单，周宁10月29日前完成滚动交互回归。",
+              "cleaned_text": "我在10月28日前整理移动端适配清单，周宁10月29日前完成滚动交互回归。"
+            }
+          ]
+        },
+        "markdown": "# 项目周会｜官网改版进度同步\n\n## 议题\n- 官网首页适配、交互验收与本周排期\n\n## 结论\n- 本周优先完成首页适配与交互验收；其他新增功能暂不插入。\n\n## 待办\n- 林晓：10月28日前整理移动端适配清单；周宁：10月29日前完成滚动交互回归。\n\n## 会议记录\n- 00:00:08 林晓：官网首页视觉第一轮已经完成，今天主要看适配和交互验收。\n- 00:01:26 周宁：桌面滚动效果整体可用，但移动端还有两个断点需要复查。\n- 00:03:40 陈一：这周先把首页适配与交互验收做好，其他新增功能暂时不加。\n- 00:05:15 林晓：我在10月28日前整理移动端适配清单，周宁10月29日前完成滚动交互回归。",
+        "document_html": "",
+        "minutes": {
+          "summary": "官网首页视觉已完成第一轮，下一步集中检查移动端适配和滚动交互。",
+          "classification": {
+            "meeting_type": "project_sync",
+            "confidence": "演示数据",
+            "reason": "人工构造的虚构会议类型示例，非模型判断",
+            "risk_tags": []
+          }
+        }
+      },
+      {
+        "id": "demo-decision",
+        "title": "产品评审｜首发版本范围确认",
+        "created_at": "2026-10-22T14:20:00+08:00",
+        "updated_at": "2026-10-22T14:20:00+08:00",
+        "status": "纪要已生成",
+        "meeting_type": "decision_review",
+        "input_kind": "text",
+        "source_input": "陈一：今天要确认首发版本边界，避免持续加功能。\n李沐：文件导入和纪要预览已经可以完成主流程，导出还需要补验收用例。\n陈一：定一下：首发只做文件导入、纪要预览、Word与Markdown导出，协作评论放下期。\n陈一：我10月27日前更新需求文档，李沐10月28日前补齐导出验收用例。",
+        "transcript": {
+          "segments": [
+            {
+              "seg_id": "demo-decision-s1",
+              "start": "00:00:12",
+              "speaker": "陈一",
+              "text": "今天要确认首发版本边界，避免持续加功能。",
+              "cleaned_text": "今天要确认首发版本边界，避免持续加功能。"
+            },
+            {
+              "seg_id": "demo-decision-s2",
+              "start": "00:02:03",
+              "speaker": "李沐",
+              "text": "文件导入和纪要预览已经可以完成主流程，导出还需要补验收用例。",
+              "cleaned_text": "文件导入和纪要预览已经可以完成主流程，导出还需要补验收用例。"
+            },
+            {
+              "seg_id": "demo-decision-s3",
+              "start": "00:04:18",
+              "speaker": "陈一",
+              "text": "定一下：首发只做文件导入、纪要预览、Word与Markdown导出，协作评论放下期。",
+              "cleaned_text": "定一下：首发只做文件导入、纪要预览、Word与Markdown导出，协作评论放下期。"
+            },
+            {
+              "seg_id": "demo-decision-s4",
+              "start": "00:06:09",
+              "speaker": "陈一",
+              "text": "我10月27日前更新需求文档，李沐10月28日前补齐导出验收用例。",
+              "cleaned_text": "我10月27日前更新需求文档，李沐10月28日前补齐导出验收用例。"
+            }
+          ]
+        },
+        "markdown": "# 产品评审｜首发版本范围确认\n\n## 议题\n- 确定首发能力范围和待延期事项\n\n## 结论\n- 确认首发仅包含文件导入、纪要预览、Word 与 Markdown 导出；协作评论进入下期。\n\n## 待办\n- 陈一：10月27日前更新首发需求文档；李沐：10月28日前补齐导出验收用例。\n\n## 会议记录\n- 00:00:12 陈一：今天要确认首发版本边界，避免持续加功能。\n- 00:02:03 李沐：文件导入和纪要预览已经可以完成主流程，导出还需要补验收用例。\n- 00:04:18 陈一：定一下：首发只做文件导入、纪要预览、Word与Markdown导出，协作评论放下期。\n- 00:06:09 陈一：我10月27日前更新需求文档，李沐10月28日前补齐导出验收用例。",
+        "document_html": "",
+        "minutes": {
+          "summary": "首发版本聚焦文件导入、会议纪要预览与导出，协作评论延后。",
+          "classification": {
+            "meeting_type": "decision_review",
+            "confidence": "演示数据",
+            "reason": "人工构造的虚构会议类型示例，非模型判断",
+            "risk_tags": []
+          }
+        }
+      },
+      {
+        "id": "demo-triage",
+        "title": "问题排查｜大文件上传失败复盘",
+        "created_at": "2026-10-21T10:15:00+08:00",
+        "updated_at": "2026-10-21T10:15:00+08:00",
+        "status": "纪要已生成",
+        "meeting_type": "issue_triage",
+        "input_kind": "text",
+        "source_input": "张可：测试环境上传超过一百兆的文件时偶尔失败，普通小文件没有复现。\n吴帆：目前怀疑是超时配置，但是日志还不足以确定根因。\n张可：我10月26日前用分片上传再验证一次，并整理测试记录。\n吴帆：先记录为待验证问题，不要直接写成已经定位到超时原因。",
+        "transcript": {
+          "segments": [
+            {
+              "seg_id": "demo-triage-s1",
+              "start": "00:00:15",
+              "speaker": "张可",
+              "text": "测试环境上传超过一百兆的文件时偶尔失败，普通小文件没有复现。",
+              "cleaned_text": "测试环境上传超过一百兆的文件时偶尔失败，普通小文件没有复现。"
+            },
+            {
+              "seg_id": "demo-triage-s2",
+              "start": "00:02:44",
+              "speaker": "吴帆",
+              "text": "目前怀疑是超时配置，但是日志还不足以确定根因。",
+              "cleaned_text": "目前怀疑是超时配置，但是日志还不足以确定根因。"
+            },
+            {
+              "seg_id": "demo-triage-s3",
+              "start": "00:04:55",
+              "speaker": "张可",
+              "text": "我10月26日前用分片上传再验证一次，并整理测试记录。",
+              "cleaned_text": "我10月26日前用分片上传再验证一次，并整理测试记录。"
+            },
+            {
+              "seg_id": "demo-triage-s4",
+              "start": "00:07:12",
+              "speaker": "吴帆",
+              "text": "先记录为待验证问题，不要直接写成已经定位到超时原因。",
+              "cleaned_text": "先记录为待验证问题，不要直接写成已经定位到超时原因。"
+            }
+          ]
+        },
+        "markdown": "# 问题排查｜大文件上传失败复盘\n\n## 议题\n- 排查上传失败原因并制定验证方案\n\n## 结论\n- 目前只能确认问题集中在大文件上传链路；超时是否为根因尚未验证。\n\n## 待办\n- 张可：10月26日前完成大文件分片上传验证并提交测试记录。\n\n## 会议记录\n- 00:00:15 张可：测试环境上传超过一百兆的文件时偶尔失败，普通小文件没有复现。\n- 00:02:44 吴帆：目前怀疑是超时配置，但是日志还不足以确定根因。\n- 00:04:55 张可：我10月26日前用分片上传再验证一次，并整理测试记录。\n- 00:07:12 吴帆：先记录为待验证问题，不要直接写成已经定位到超时原因。",
+        "document_html": "",
+        "minutes": {
+          "summary": "测试环境出现大文件上传中断，初步怀疑超时配置，需用分片上传方案复测。",
+          "classification": {
+            "meeting_type": "issue_triage",
+            "confidence": "演示数据",
+            "reason": "人工构造的虚构会议类型示例，非模型判断",
+            "risk_tags": []
+          }
+        }
+      },
+      {
+        "id": "demo-brainstorm",
+        "title": "创意脑暴｜AI 会议纪要体验优化",
+        "created_at": "2026-10-19T15:40:00+08:00",
+        "updated_at": "2026-10-19T15:40:00+08:00",
+        "status": "纪要已生成",
+        "meeting_type": "brainstorming",
+        "input_kind": "text",
+        "source_input": "许安：我想讨论纪要阅读体验，尤其是如何快速找到结论和待办。\n林晓：可以试试摘要卡片、重点高亮，或者从结论直接跳到逐字稿。\n许安：目前先不决定采用哪个方向，我10月30日前做三套低保真方案对比。\n林晓：下一次我们再根据可读性测试结果选择，不要现在认定其中一个最好。",
+        "transcript": {
+          "segments": [
+            {
+              "seg_id": "demo-brainstorm-s1",
+              "start": "00:00:30",
+              "speaker": "许安",
+              "text": "我想讨论纪要阅读体验，尤其是如何快速找到结论和待办。",
+              "cleaned_text": "我想讨论纪要阅读体验，尤其是如何快速找到结论和待办。"
+            },
+            {
+              "seg_id": "demo-brainstorm-s2",
+              "start": "00:02:12",
+              "speaker": "林晓",
+              "text": "可以试试摘要卡片、重点高亮，或者从结论直接跳到逐字稿。",
+              "cleaned_text": "可以试试摘要卡片、重点高亮，或者从结论直接跳到逐字稿。"
+            },
+            {
+              "seg_id": "demo-brainstorm-s3",
+              "start": "00:04:58",
+              "speaker": "许安",
+              "text": "目前先不决定采用哪个方向，我10月30日前做三套低保真方案对比。",
+              "cleaned_text": "目前先不决定采用哪个方向，我10月30日前做三套低保真方案对比。"
+            },
+            {
+              "seg_id": "demo-brainstorm-s4",
+              "start": "00:06:17",
+              "speaker": "林晓",
+              "text": "下一次我们再根据可读性测试结果选择，不要现在认定其中一个最好。",
+              "cleaned_text": "下一次我们再根据可读性测试结果选择，不要现在认定其中一个最好。"
+            }
+          ]
+        },
+        "markdown": "# 创意脑暴｜AI 会议纪要体验优化\n\n## 议题\n- 讨论纪要的可读性与证据呈现方式\n\n## 结论\n- 会议未作最终选型；先做三种信息展示方案的可读性比较。\n\n## 待办\n- 许安：10月30日前制作三套低保真方案供下一轮讨论。\n\n## 会议记录\n- 00:00:30 许安：我想讨论纪要阅读体验，尤其是如何快速找到结论和待办。\n- 00:02:12 林晓：可以试试摘要卡片、重点高亮，或者从结论直接跳到逐字稿。\n- 00:04:58 许安：目前先不决定采用哪个方向，我10月30日前做三套低保真方案对比。\n- 00:06:17 林晓：下一次我们再根据可读性测试结果选择，不要现在认定其中一个最好。",
+        "document_html": "",
+        "minutes": {
+          "summary": "讨论了摘要卡片、重点高亮和逐字稿定位三种方向，暂未确定实施方案。",
+          "classification": {
+            "meeting_type": "brainstorming",
+            "confidence": "演示数据",
+            "reason": "人工构造的虚构会议类型示例，非模型判断",
+            "risk_tags": []
+          }
+        }
+      },
+      {
+        "id": "demo-interview",
+        "title": "用户访谈｜团队例会记录习惯",
+        "created_at": "2026-10-17T11:00:00+08:00",
+        "updated_at": "2026-10-17T11:00:00+08:00",
+        "status": "纪要已生成",
+        "meeting_type": "interview_research",
+        "input_kind": "text",
+        "source_input": "顾言：你们现在如何整理每周例会的会议纪要？\n受访者甲：一般是人工记录，会后最花时间的是核对谁负责什么事情。\n受访者甲：如果待办能写清负责人和截止日期，还能点回原话，我会更放心。\n顾言：我10月23日前整理这次访谈的观察记录，后续再邀请其他团队验证。",
+        "transcript": {
+          "segments": [
+            {
+              "seg_id": "demo-interview-s1",
+              "start": "00:00:07",
+              "speaker": "顾言",
+              "text": "你们现在如何整理每周例会的会议纪要？",
+              "cleaned_text": "你们现在如何整理每周例会的会议纪要？"
+            },
+            {
+              "seg_id": "demo-interview-s2",
+              "start": "00:01:15",
+              "speaker": "受访者甲",
+              "text": "一般是人工记录，会后最花时间的是核对谁负责什么事情。",
+              "cleaned_text": "一般是人工记录，会后最花时间的是核对谁负责什么事情。"
+            },
+            {
+              "seg_id": "demo-interview-s3",
+              "start": "00:03:42",
+              "speaker": "受访者甲",
+              "text": "如果待办能写清负责人和截止日期，还能点回原话，我会更放心。",
+              "cleaned_text": "如果待办能写清负责人和截止日期，还能点回原话，我会更放心。"
+            },
+            {
+              "seg_id": "demo-interview-s4",
+              "start": "00:05:26",
+              "speaker": "顾言",
+              "text": "我10月23日前整理这次访谈的观察记录，后续再邀请其他团队验证。",
+              "cleaned_text": "我10月23日前整理这次访谈的观察记录，后续再邀请其他团队验证。"
+            }
+          ]
+        },
+        "markdown": "# 用户访谈｜团队例会记录习惯\n\n## 议题\n- 了解例会纪要整理流程与主要痛点\n\n## 结论\n- 访谈反映了可追溯纪要和待办清晰度的需求；该次访谈不足以代表所有用户。\n\n## 待办\n- 顾言：10月23日前整理本次访谈问题清单与观察记录。\n\n## 会议记录\n- 00:00:07 顾言：你们现在如何整理每周例会的会议纪要？\n- 00:01:15 受访者甲：一般是人工记录，会后最花时间的是核对谁负责什么事情。\n- 00:03:42 受访者甲：如果待办能写清负责人和截止日期，还能点回原话，我会更放心。\n- 00:05:26 顾言：我10月23日前整理这次访谈的观察记录，后续再邀请其他团队验证。",
+        "document_html": "",
+        "minutes": {
+          "summary": "受访者希望会后快速找到负责人和截止日期，并能返回原始发言核对。",
+          "classification": {
+            "meeting_type": "interview_research",
+            "confidence": "演示数据",
+            "reason": "人工构造的虚构会议类型示例，非模型判断",
+            "risk_tags": []
+          }
+        }
+      },
+      {
+        "id": "demo-draft",
+        "title": "部门例会｜下周议题草稿",
+        "created_at": "2026-10-16T09:30:00+08:00",
+        "updated_at": "2026-10-16T09:30:00+08:00",
+        "status": "草稿",
+        "meeting_type": "general_meeting",
+        "input_kind": "text",
+        "source_input": "赵悦：下次例会准备讨论排期、跨团队协作和知识库整理。\n何川：这几个问题先列为待讨论议题，具体分工下次会上再确认。",
+        "transcript": {
+          "segments": [
+            {
+              "seg_id": "demo-draft-s1",
+              "start": "00:00:04",
+              "speaker": "赵悦",
+              "text": "下次例会准备讨论排期、跨团队协作和知识库整理。",
+              "cleaned_text": "下次例会准备讨论排期、跨团队协作和知识库整理。"
+            },
+            {
+              "seg_id": "demo-draft-s2",
+              "start": "00:01:50",
+              "speaker": "何川",
+              "text": "这几个问题先列为待讨论议题，具体分工下次会上再确认。",
+              "cleaned_text": "这几个问题先列为待讨论议题，具体分工下次会上再确认。"
+            }
+          ]
+        },
+        "markdown": "",
+        "document_html": "",
+        "minutes": {
+          "summary": "初步记录了排期、跨团队协作和知识库整理三个待讨论议题。",
+          "classification": {
+            "meeting_type": "general_meeting",
+            "confidence": "演示数据",
+            "reason": "人工构造的虚构会议类型示例，非模型判断",
+            "risk_tags": []
+          }
+        }
+      }
+    ];
+    const demoDeletedIds = () => new Set(JSON.parse(sessionStorage.getItem("minute-demo-deleted") || "[]"));
+    const demoVisibleDocuments = () => DEMO_DOCUMENTS.filter(item => !demoDeletedIds().has(item.id));
+
     const DEFAULT_TITLE = "未命名";
     const TITLE_LIMIT = 120;
     const TITLE_DISPLAY_LIMIT = 42;
@@ -4586,8 +4896,19 @@
     }
 
     async function requestJson(url, options = {}) {
+      if (STATIC_DEMO && /^\/api\/minutes\/[^/?#]+$/.test(url)) {
+        const id = decodeURIComponent(url.split("/").pop());
+        const entry = demoVisibleDocuments().find(item => item.id === id);
+        if ((options.method || "GET").toUpperCase() === "GET" && entry) {
+          return { document: structuredClone(entry) };
+        }
+        if ((options.method || "GET").toUpperCase() === "DELETE" && entry) {
+          sessionStorage.setItem("minute-demo-deleted", JSON.stringify([...demoDeletedIds(), id]));
+          return { ok: true };
+        }
+      }
       if (STATIC_DEMO && url.startsWith("/api/")) {
-        throw new Error("静态演示页面不支持真实转写、AI 生成或保存，请部署 Python 后端后使用。");
+        throw new Error("静态演示页面仅支持查看虚构会议记录；真实转写、AI 生成和云端保存需要 Python 后端。");
       }
       const response = await fetch(url, options);
       let data = {};
@@ -4974,6 +5295,9 @@
           ? "status-pill status-pill--processing"
           : "status-pill status-pill--error";
       const tags = rawStatus === "纪要已生成" ? [] : [`<span class="${statusClass}">${escapeHtml(status)}</span>`];
+      if (STATIC_DEMO && String(document.id || "").startsWith("demo-")) {
+        tags.push('<span class="meta-pill">虚构演示</span>');
+      }
       if (status === "纪要生成失败") {
         tags.push(`
           <span class="status-reason-wrap">
@@ -5652,7 +5976,7 @@
 
     async function loadDocuments() {
       if (STATIC_DEMO) {
-        state.documents = [];
+        state.documents = demoVisibleDocuments();
         renderLibrary();
         return;
       }
@@ -6038,8 +6362,7 @@
         authPasswordInput.value = "";
         setAuthStatus("", "");
         applyAuthState({ id: "demo", email: "11" });
-        state.documents = [];
-        renderLibrary();
+        await loadDocuments();
         updateGenerateState();
         return;
       }
