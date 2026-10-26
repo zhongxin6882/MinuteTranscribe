@@ -3315,6 +3315,8 @@
         min-width: max-content;
       }
     }
+    .static-demo-note { font-size: 12px; line-height: 1.65; color: #4058c3; padding: 10px 12px; margin: 10px 0 0; border-radius: 8px; background: #eef2ff; }
+    .static-demo-note span { display: block; margin-top: 2px; color: #667085; }
   </style>
 </head>
 <body class="is-library-view">
@@ -3328,6 +3330,7 @@
         </div>
         <div class="auth-head">
           <h1 class="auth-title" id="auth-title">欢迎使用Minute Transcribe</h1>
+          <p class="static-demo-note hidden" id="static-demo-note">静态演示版 · 账号 <strong>11</strong> / 密码 <strong>11</strong><span>仅供查看界面。注册、真实转写、AI 生成和云端保存需部署 Python 后端。</span></p>
         </div>
         <div class="auth-tabs">
           <button class="auth-tab active" id="auth-tab-login" type="button">账号登录</button>
@@ -3693,6 +3696,8 @@
 
   <script src="https://cdn.jsdelivr.net/npm/tinymce@8/tinymce.min.js" referrerpolicy="origin"></script>
   <script>
+    // GitHub Pages is a public, frontend-only UI preview, not real authentication.
+    const STATIC_DEMO = location.hostname === "zhongxin6882.github.io" && location.pathname.startsWith("/MinuteTranscribe/");
     const DEFAULT_TITLE = "未命名";
     const TITLE_LIMIT = 120;
     const TITLE_DISPLAY_LIMIT = 42;
@@ -4499,7 +4504,7 @@
     }
 
     function updateAuthSubmitState() {
-      authSubmit.disabled = !(state.authSliderVerified && authDisclaimerCheckbox.checked);
+      authSubmit.disabled = STATIC_DEMO ? false : !(state.authSliderVerified && authDisclaimerCheckbox.checked);
     }
 
     function updateAuthSliderUi(progress = 0) {
@@ -4581,6 +4586,9 @@
     }
 
     async function requestJson(url, options = {}) {
+      if (STATIC_DEMO && url.startsWith("/api/")) {
+        throw new Error("静态演示页面不支持真实转写、AI 生成或保存，请部署 Python 后端后使用。");
+      }
       const response = await fetch(url, options);
       let data = {};
       try {
@@ -5643,6 +5651,11 @@
     }
 
     async function loadDocuments() {
+      if (STATIC_DEMO) {
+        state.documents = [];
+        renderLibrary();
+        return;
+      }
       if (location.protocol === "file:") {
         state.documents = [];
         renderLibrary();
@@ -5806,6 +5819,11 @@
     }
 
     async function loadConfig() {
+      if (STATIC_DEMO) {
+        fileModeWarning.classList.remove("hidden");
+        fileModeWarning.textContent = "当前是 GitHub Pages 静态演示页面：可浏览界面，账号 11 / 密码 11 仅供演示。转写、AI 生成、云端保存及模型配置需要 Python 后端。";
+        return;
+      }
       if (location.protocol === "file:") {
         fileModeWarning.classList.remove("hidden");
         setStatus(runStatus, "当前是 file:// 直接打开，模型配置和生成接口不可用。请运行 python3 -m src.server 后访问 http://127.0.0.1:8000", "error");
@@ -5986,6 +6004,10 @@
     }
 
     async function loadSession() {
+      if (STATIC_DEMO) {
+        applyAuthState(sessionStorage.getItem("minute-static-demo") === "1" ? { id: "demo", email: "11" } : null);
+        return;
+      }
       if (location.protocol === "file:") {
         applyAuthState(null);
         return;
@@ -6003,6 +6025,24 @@
       const email = authEmailInput.value.trim();
       const password = authPasswordInput.value;
       const passwordConfirm = authPasswordConfirmInput.value;
+      if (STATIC_DEMO) {
+        if (state.authMode !== "login") {
+          setAuthStatus("静态演示版暂不支持注册，请使用演示账号登录。", "error");
+          return;
+        }
+        if (email !== "11" || password !== "11") {
+          setAuthStatus("演示账号或密码错误，请使用 11 / 11。", "error");
+          return;
+        }
+        sessionStorage.setItem("minute-static-demo", "1");
+        authPasswordInput.value = "";
+        setAuthStatus("", "");
+        applyAuthState({ id: "demo", email: "11" });
+        state.documents = [];
+        renderLibrary();
+        updateGenerateState();
+        return;
+      }
       if (!email) {
         setAuthStatus("请输入邮箱地址。", "error");
         return;
@@ -6045,7 +6085,9 @@
     }
 
     async function logout() {
-      try {
+      if (STATIC_DEMO) {
+        sessionStorage.removeItem("minute-static-demo");
+      } else try {
         await requestJson("/api/auth/logout", { method: "POST" });
       } catch (error) {
         // Ignore logout errors and clear local state.
@@ -6479,6 +6521,14 @@
     syncMediaUi();
     initializeEditor();
     syncEditorInteractivity();
+    if (STATIC_DEMO) {
+      document.getElementById("static-demo-note").classList.remove("hidden");
+      authEmailInput.type = "text"; // Username 11 is not an email address.
+      authEmailInput.autocomplete = "username";
+      authTabRegister.disabled = true;
+      authTabRegister.title = "静态演示版不支持账号注册";
+      authSlider.classList.add("hidden"); // Demo-only entry; production slider is unchanged.
+    }
     setAuthMode("login");
     loadSession().then(async () => {
       if (state.currentUser) {
